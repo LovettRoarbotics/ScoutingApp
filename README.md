@@ -17,3 +17,7 @@ A small app written in Java to help us gather and organize scouting data better.
 * Send the JSON to another program 
 * Have another program to parse the JSON
 * Export parsed data to tableau
+
+## Compiling from source:
+* run the "jar" build
+* go into lib and run the app.sh with `./app.sh` (note that you may need to run `chmod a+x app.sh` to execute it.
