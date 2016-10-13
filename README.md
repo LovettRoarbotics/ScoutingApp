@@ -20,4 +20,4 @@ A small app written in Java to help us gather and organize scouting data better.
 
 ## Compiling from source:
 * run the "jar" build
-* go into lib and run the app.sh with `./app.sh` (note that you may need to run `chmod a+x app.sh` to execute it.
+* go into lib and run the app.sh with `./app.sh` (note that you may need to run `chmod a+x app.sh` to execute it)
