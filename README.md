@@ -1,5 +1,6 @@
 # ScoutingApp
 [![Build Status](https://img.shields.io/travis/FRC-Utilities/QDriverStation.svg?style=flat-square)](https://github.com/bman12three4/ScoutingApp)
+<img src="https://img.shields.io/travis/FRC-Utilities/QDriverStation.svg?style=flat-square" alt="I don't actually use travis-cl, it just looks cool."/>
 ## Description
 A small app written in Java to help us gather and organize scouting data better.
 
