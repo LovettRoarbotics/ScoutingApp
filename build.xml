@@ -21,6 +21,7 @@
 	<target name="clean" description="delete old files">
 		<delete dir="${class.dir}" />
 		<delete dir="${jar.dir}" />
+		<delete file="scout.json"/>
 	</target>
 
 	<target name="compile" description="build class files" depends="clean">
