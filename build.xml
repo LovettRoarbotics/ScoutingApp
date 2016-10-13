@@ -9,19 +9,20 @@
 	<path id="libraries.path">
 		<fileset dir="${lib.dir}">
 			<include name="*.jar" />
+			<include name="*.sh"/>
 		</fileset>
 	</path>
-	
+
 	<path id="jar2app.path">
 		<fileset dir="${lib.dir}">
-			<include name="*.sh"/>
-			</fileset>
+			<include name="*.sh" />
+		</fileset>
 	</path>
 
 	<target name="clean" description="delete old files">
 		<delete dir="${class.dir}" />
 		<delete dir="${jar.dir}" />
-		<delete file="scout.json"/>
+		<delete file="scout.json" />
 	</target>
 
 	<target name="compile" description="build class files" depends="clean">
