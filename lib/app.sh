@@ -1,0 +1,3 @@
+#/bin/bash
+echo making app...
+jar2app ScoutingApp.jar
