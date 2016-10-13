@@ -1,0 +1,6 @@
+{
+  "name": "Scouting app",
+  "tagline": "",
+  "body": "# Scouting App\r\n## Description\r\nA small app written in Java to help us gather and organize scouting data better.\r\n\r\n## Goals\r\n* Run a local program on a laptop to gather data\r\n* Export the data as a JSON and send it to a computer acting as a server\r\n* Parse that data and import it into Tableau or some other similar software.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
