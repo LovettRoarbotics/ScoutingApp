@@ -3,6 +3,7 @@ package com.roarbotics;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -33,8 +34,7 @@ public class Main {
 	}
 
 	public static void export() throws IOException {
-		Path file = (img/scout.json);
-		
+		Path file = FileSystems.getDefault().getPath("scout.json");
 		try {
 		    // Create the empty file with default permissions, etc.
 		    Files.createFile(file);
@@ -46,7 +46,7 @@ public class Main {
 		    System.err.format("createFile error: %s%n", x);
 		}
 		String json = JsonWriter.objectToJson(scout);
-		FileWriter out = new FileWriter("/img/scout.json");
+		FileWriter out = new FileWriter("scout.json");
 		out.write(json);
 		out.close();
 
