@@ -1,7 +1,17 @@
 package com.cedarsoftware.util.io;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>The ObjectResolver converts the raw Maps created from the JsonParser to Java
@@ -677,7 +687,6 @@ public class ObjectResolver extends Resolver
                             final String fieldName = entry.getKey();
                             if (!fieldName.startsWith("this$"))
                             {
-                                // TODO: If more than one type, need to associate correct typeArgs entry to value
                                 Field field = classFields.get(fieldName);
 
                                 if (field != null && (field.getType().getTypeParameters().length > 0 || field.getGenericType() instanceof TypeVariable))

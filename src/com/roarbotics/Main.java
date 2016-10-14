@@ -1,13 +1,7 @@
 package com.roarbotics;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
-import com.cedarsoftware.util.io.JsonWriter;
 import com.roarbotics.window.InitAlert;
 import com.roarbotics.window.WindowRunner;
 
@@ -15,13 +9,13 @@ public class Main {
 
 	protected static boolean init = false;
 
-	static ScoutingForm scout;
+	private static ScoutingForm scout;
 
 	static int teamNum;
 
 	public static void main(String[] args) throws IOException {
 		if (!init) {
-			scout = new ScoutingForm(InitAlert.run());
+			setScout(new ScoutingForm(InitAlert.run()));
 			init();
 			init = true;
 		}
@@ -39,6 +33,14 @@ public class Main {
 
 	public static void setTeam(int team) {
 		teamNum = team;
+	}
+
+	public static ScoutingForm getScout() {
+		return scout;
+	}
+
+	public static void setScout(ScoutingForm scout) {
+		Main.scout = scout;
 	}
 
 }
