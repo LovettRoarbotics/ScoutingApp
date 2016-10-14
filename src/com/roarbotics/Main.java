@@ -2,7 +2,6 @@ package com.roarbotics;
 
 import java.io.IOException;
 
-import com.roarbotics.json.TemplateReader;
 import com.roarbotics.window.InitAlert;
 import com.roarbotics.window.WindowRunner;
 
@@ -19,7 +18,7 @@ public class Main {
 			setScout(new ScoutingForm(InitAlert.run()));
 			init();
 			init = true;
-			TemplateReader.inputJSON();
+			//TemplateReader.inputJSON();
 		}
 
 	}

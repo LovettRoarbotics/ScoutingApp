@@ -20,6 +20,7 @@ public class ButtonPanel {
 				try {
 					CheckBoxReader.readCheckBoxes();
 					Exporter.exportJSON();
+					WindowRunner.frame.dispose();
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}

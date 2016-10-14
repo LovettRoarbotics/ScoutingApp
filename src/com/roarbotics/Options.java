@@ -8,8 +8,9 @@ public class Options {
 	 */
 	//TODO Change these to more accurately represent their meanings.
 	public static String[] robotAttributes = {"exists", "is red", "turns on"};
-	public static String[] performanceCharacteristics = {};
-	public static String[] other = {};
+	public static String[] performanceCharacteristics = {"Go fast?", "Go really fast", "does the thing"};
+	public static String[] other = {"Looks like it won't fall apart?", "did fall apart?"};
 	
 	public static int[] windowDim = {1280, 800};
+	public static boolean pack = true;
 }

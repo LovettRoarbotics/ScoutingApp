@@ -11,10 +11,23 @@ import com.cedarsoftware.util.io.JsonWriter;
 import com.roarbotics.Main;
 
 public class Exporter {
+	
+	/**
+	 * @deprecated Part of {@link #addToScoutingForm}
+	 * @author Byron Lathi
+	 *
+	 */
 	public static enum Option {
 		robotAttributes, performanceCharacteristics, other
 	}
-
+	
+	/**
+	 * @deprecated Use the array lists in the OptionsPanel.
+	 * @author Byron Lathi
+	 * @param type The enumerated value of the option
+	 * @param spot Which place in the array should be replaced
+	 * @param key The value that should be placed into the array
+	 */
 	public static void addToScoutingForm(Option type, int spot, int key) {
 		switch (type) {
 		case robotAttributes:
@@ -34,6 +47,7 @@ public class Exporter {
 		Path file = FileSystems.getDefault().getPath("scout.json");
 		try {
 			// Create the empty file with default permissions, etc.
+			Files.delete(file);
 			Files.createFile(file);
 		} catch (FileAlreadyExistsException x) {
 			System.err.format("file named %s" + " already exists%n", file);
