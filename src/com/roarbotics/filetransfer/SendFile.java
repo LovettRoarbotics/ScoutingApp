@@ -13,13 +13,25 @@ public class SendFile {
 	protected static ServerSocket scoutingApp;
 	protected static Socket serviceSocket;
 	protected static PrintStream output;
-
+	
+	
+/**
+ * Initializes a server with the port of {@link com.rorbotics.Options#LISTENING_PORT LISTENING_PORT}.
+ * @author Byron Lathi
+ * @throws IOException
+ */
 	public static void initServer() throws IOException {
 		scoutingApp = new ServerSocket(Options.LISTENING_PORT);
 		serviceSocket = scoutingApp.accept();
 		output = new PrintStream(serviceSocket.getOutputStream());
 	}
-
+	
+	/**
+	 * 
+	 * @author Byron Lathi
+	 * @param file
+	 * @throws FileNotFoundException
+	 */
 	public static void sendFile(File file) throws FileNotFoundException {
 		output = new PrintStream(file);
 	}
