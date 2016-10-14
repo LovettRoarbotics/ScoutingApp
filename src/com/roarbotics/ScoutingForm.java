@@ -1,10 +1,14 @@
 package com.roarbotics;
 
-
 public class ScoutingForm {
 	private int team;
+	// The supressors are so that I don't have to see warnings for
+	// something that I know is alright.
+	@SuppressWarnings("unused")
 	private String[] TEMPLATErobotAttributes = Options.robotAttributes;
+	@SuppressWarnings("unused")
 	private String[] TEMPLATEperformanceCharacteristics = Options.performanceCharacteristics;
+	@SuppressWarnings("unused")
 	private String[] TEMPLATEother = Options.other;
 	private int[] robotAttributes = new int[Options.robotAttributes.length];
 	private int[] performanceCharacteristics = new int[Options.performanceCharacteristics.length]; 

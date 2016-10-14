@@ -9,7 +9,6 @@ public class CheckBoxReader {
 		for (int i = 0; i < Options.robotAttributes.length; i++){
 			if (OptionsPanel.robotAttributesCheckBoxes.get(i).isSelected()){
 				Main.getScout().setRobotAttribute(i, 1);
-				System.out.println("selected");
 			} else {
 				Main.getScout().setRobotAttribute(i, 0);
 			}
