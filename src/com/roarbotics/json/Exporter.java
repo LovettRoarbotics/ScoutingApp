@@ -9,6 +9,7 @@ import java.nio.file.Path;
 
 import com.cedarsoftware.util.io.JsonWriter;
 import com.roarbotics.Main;
+import com.roarbotics.filetransfer.SendFile;
 
 public class Exporter {
 	
@@ -45,9 +46,9 @@ public class Exporter {
 	public static void exportJSON() throws IOException {
 
 		Path file = FileSystems.getDefault().getPath("scout.json");
+		Files.delete(file);
 		try {
 			// Create the empty file with default permissions, etc.
-			Files.delete(file);
 			Files.createFile(file);
 		} catch (FileAlreadyExistsException x) {
 			System.err.format("file named %s" + " already exists%n", file);
@@ -59,6 +60,7 @@ public class Exporter {
 		FileWriter out = new FileWriter("scout.json");
 		out.write(json);
 		out.close();
+		SendFile.sendFile(file.toFile());
 
 	}
 	

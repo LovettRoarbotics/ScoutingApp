@@ -2,6 +2,10 @@ package com.roarbotics;
 
 public class Options {
 	public static final String CONNECTION_ADDRESS = null;
+	
+	/**
+	 * Port to start the server at. It is set to 5482 because yes.
+	 */
 	public static final int LISTENING_PORT = 5482;
 	//TODO: Make it easier to change these, perhaps with another JSON?
 	/** Attribues of the robot, such as the drivetrain configuration, Autonomous mode, strategy, etc.
