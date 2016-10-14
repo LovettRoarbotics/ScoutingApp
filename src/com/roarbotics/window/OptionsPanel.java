@@ -13,13 +13,9 @@ public class OptionsPanel {
 		optionsPanel.add(exist);
 		JCheckBox[] robotAttributes = new JCheckBox[Options.robotAttributes.length];
 		for (int i = 0; i < robotAttributes.length; i++){
+			robotAttributes[i] = new JCheckBox(Options.robotAttributes[i]);
 			optionsPanel.add(robotAttributes[i]);
 		}
-		/*Map<String, Vertex> map = new HashMap<String, Vertex>();
-		for (int i = 0; i < Options.robotAttributes.length; i++){
-			map.put("v" + String.valueOf(i), new Vertex(robotAttributes[i]);
-		}
-		*/
 		
 		
 		return optionsPanel;

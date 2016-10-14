@@ -25,7 +25,6 @@ public class Main {
 			init();
 			init = true;
 		}
-		export();
 
 	}
 
@@ -33,24 +32,6 @@ public class Main {
 		WindowRunner.run();
 	}
 
-	public static void export() throws IOException {
-		Path file = FileSystems.getDefault().getPath("scout.json");
-		try {
-		    // Create the empty file with default permissions, etc.
-		    Files.createFile(file);
-		} catch (FileAlreadyExistsException x) {
-		    System.err.format("file named %s" +
-		        " already exists%n", file);
-		} catch (IOException x) {
-		    // Some other sort of failure, such as permissions.
-		    System.err.format("createFile error: %s%n", x);
-		}
-		String json = JsonWriter.objectToJson(scout);
-		FileWriter out = new FileWriter("scout.json");
-		out.write(json);
-		out.close();
-
-	}
 
 	public static void setTeam(String team) {
 		setTeam(Integer.parseInt(team));
