@@ -1,6 +1,8 @@
 package com.roarbotics;
 
 public class Options {
+	public static final String CONNECTION_ADDRESS = null;
+	public static final int LISTENING_PORT = 5482;
 	//TODO: Make it easier to change these, perhaps with another JSON?
 	/** Attribues of the robot, such as the drivetrain configuration, Autonomous mode, strategy, etc.
 	 * <p>*Note that a String Array is probably not the best choice for this*
