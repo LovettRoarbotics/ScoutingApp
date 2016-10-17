@@ -6,6 +6,7 @@ import com.roarbotics.window.OptionsPanel;
 
 public class CheckBoxReader {
 	public static void readCheckBoxes(){
+		System.out.println("Reading Checkboxes...");
 		for (int i = 0; i < Options.robotAttributes.length; i++){
 			if (OptionsPanel.robotAttributesCheckBoxes.get(i).isSelected()){
 				Main.getScout().setRobotAttribute(i, 1);
@@ -27,5 +28,8 @@ public class CheckBoxReader {
 				Main.getScout().setOther(i, 0);
 			}
 		}
+		System.out.println(Main.getScout().getRobotAttributes()[0]);
+		System.out.println(Main.getScout().getPerformanceCharacteristics()[0]);
+		System.out.println(Main.getScout().getOther()[0]);
 	}
 }
