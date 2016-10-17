@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.roarbotics.window.InitAlert;
 import com.roarbotics.window.WindowRunner;
 
-public class Main {
+public class ScoutingApp {
 
 	protected static boolean init = false;
 
@@ -41,7 +41,7 @@ public class Main {
 	}
 
 	public static void setScout(ScoutingForm scout) {
-		Main.scout = scout;
+		ScoutingApp.scout = scout;
 	}
 
 }

@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import com.cedarsoftware.util.io.JsonWriter;
-import com.roarbotics.Main;
+import com.roarbotics.ScoutingApp;
 
 public class Exporter {
 
@@ -34,13 +34,13 @@ public class Exporter {
 	public static void addToScoutingForm(Option type, int spot, int key) {
 		switch (type) {
 		case robotAttributes:
-			Main.getScout().setRobotAttribute(spot, key);
+			ScoutingApp.getScout().setRobotAttribute(spot, key);
 			break;
 		case performanceCharacteristics:
-			Main.getScout().setPerformaceCharacteristics(spot, key);
+			ScoutingApp.getScout().setPerformaceCharacteristics(spot, key);
 			break;
 		case other:
-			Main.getScout().setOther(spot, key);
+			ScoutingApp.getScout().setOther(spot, key);
 			break;
 		}
 	}
@@ -49,7 +49,7 @@ public class Exporter {
 		Path file = FileSystems.getDefault().getPath("scout.json");
 		System.out.println("Exporting...");
 		System.out.println("\tConverting JSON...");
-		String json = JsonWriter.objectToJson(Main.getScout());
+		String json = JsonWriter.objectToJson(ScoutingApp.getScout());
 		writeToFile(file, json);
 	}
 
@@ -58,15 +58,13 @@ public class Exporter {
 			Files.createFile(file);
 		} catch (FileAlreadyExistsException x) {
 			System.err.format("\nfile named %s" + " already exists%n", file);
+			System.err.println("Deleting existing file...");
 		} catch (IOException x) {
 			System.err.format("\ncreateFile error: %s%n", x);
 		}
-		System.out.println("Starting Export...");
 		FileWriter out = new FileWriter(file.toFile());
-		System.out.println("Exporting...");
 		out.write(json);
 		out.close();
-		System.out.println("Done.");
 	}
 
 }
