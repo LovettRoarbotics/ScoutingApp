@@ -8,7 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import com.cedarsoftware.util.io.JsonWriter;
-import com.roarbotics.ScoutingApp;
+import com.roarbotics.Main;
+import com.roarbotics.net.SendFile;
 
 public class Exporter {
 
@@ -34,13 +35,13 @@ public class Exporter {
 	public static void addToScoutingForm(Option type, int spot, int key) {
 		switch (type) {
 		case robotAttributes:
-			ScoutingApp.getScout().setRobotAttribute(spot, key);
+			Main.getScout().setRobotAttribute(spot, key);
 			break;
 		case performanceCharacteristics:
-			ScoutingApp.getScout().setPerformaceCharacteristics(spot, key);
+			Main.getScout().setPerformaceCharacteristics(spot, key);
 			break;
 		case other:
-			ScoutingApp.getScout().setOther(spot, key);
+			Main.getScout().setOther(spot, key);
 			break;
 		}
 	}
@@ -49,8 +50,9 @@ public class Exporter {
 		Path file = FileSystems.getDefault().getPath("scout.json");
 		System.out.println("Exporting...");
 		System.out.println("\tConverting JSON...");
-		String json = JsonWriter.objectToJson(ScoutingApp.getScout());
+		String json = JsonWriter.objectToJson(Main.getScout());
 		writeToFile(file, json);
+		SendFile.send();
 	}
 
 	private static void writeToFile(Path file, String json) throws IOException {
